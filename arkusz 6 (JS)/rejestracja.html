@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejestracja</title>
+    <link rel="stylesheet" href="styl.css">
+    <script>
+        function showBlock2() {
+            document.getElementById('blok1').style.visibility = 'hidden';
+            document.getElementById('blok2').style.visibility = 'visible';
+        }
+
+        function showBlock3() {
+            document.getElementById('blok2').style.visibility = 'hidden';
+            document.getElementById('blok3').style.visibility = 'visible';
+        }
+
+        function handleSubmit() {
+            let pass1 = document.getElementById('password').value;
+            let pass2 = document.getElementById('password2').value;
+
+            if(pass1 != pass2) {
+                alert("Podane hasła różnią się");
+            }
+
+            let name = document.getElementById('name').value;
+            let surname = document.getElementById('surname').value;
+            console.log(`Witaj ${name} ${surname}`);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Formularz rejestracyjny konferencji <em>Nasze Kwiaty</em></h1>
+    </header>
+    <main>
+        <div class="blok1" id="blok1">
+            <h2>Dane osobowe</h2>
+            <input type="text" name="name" id="name" placeholder="Wpisz imię..." required>
+            <input type="text" name="surname" id="surname" placeholder="Wpisz nazwisko..." required>
+            <button type="button" onclick="showBlock2()">Następna karta</button>
+        </div>
+        <div class="blok2" id="blok2">
+            <h2>Dane kontaktowe</h2>
+            <input type="email" name="email" id="email" placeholder="Twój email...">
+            <input type="tel" name="phone" id="phone" placeholder="Twój numer telefonu...">
+            <button type="button" onclick="showBlock3()">Następna karta</button>
+        </div>
+        <div class="blok3" id="blok3">
+            <h2>Hasło do logowania</h2>
+            <input type="password" name="password" id="password" placeholder="Podaj hasło">
+            <input type="password" name="password2" id="password2" placeholder="Powtórz hasło">
+            <button type="button" onclick="handleSubmit()">Zatwierdź</button>
+        </div>
+    </main>
+    <footer>
+        <div class="stopka1">
+            <video src="motyl.mp4" controls>Przeglądarka nie obsługuje tego formatu</video>
+        </div>
+        <div class="stopka2">
+            <h3>Plan konferencji</h3>
+            <table>
+                <tr>
+                    <td>9:00 - 12:00</td>
+                    <td>Pielęgnacja roślin</td>
+                </tr>
+                <tr>
+                    <td>13:00 - 15:00</td>
+                    <td>Targi kwiatowe</td>
+                </tr>
+            </table>
+        </div>
+        <div class="stopka3">
+            <p><a href="https://kwiaty.pl/">Internetowa kwiaciarnia</a></p>
+        </div>
+        <div class="stopka4">
+            <p>Formularz wykonał: 123456789112</p>
+        </div>
+    </footer>
+</body>
+</html>
